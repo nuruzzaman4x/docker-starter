@@ -34,8 +34,8 @@ jobs:
 
       - name: Deploy to AWS EC2
         run: |
-          echo "${{ secrets.AWS_KEY }}" > private_key.pem
-          chmod 600 private_key.pem
+          echo "${{ secrets.AWS_KEY }}" > mumbai.pem
+          chmod 600 mumbai.pem
 
           ssh -o StrictHostKeyChecking=no -i private_key.pem ${{ secrets.AWS_USER }}@${{ secrets.AWS_HOST }} << 'EOF'
 
